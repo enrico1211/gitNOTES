@@ -170,76 +170,76 @@ From which we obtain the \textbf{$\mathbf{\delta Z_m}$ and $\mathbf{\delta Z_\ps
 
 Here follow the calculation for the fermions 1PI at order $O(\frac{1}{k})$
 \begin{equation}
-    \textcolor{red} {-i \Sigma(\slashed{q})}=-i \int \frac{d^3 p}{(2\pi)^3}\gamma^\mu \frac{2\pi}{k} \epsilon_{\mu \nu \alpha} \frac{p^\alpha}{p^2}\gamma^\nu \frac{(\slashed{p}+\slashed{q})+m}{(p+q)^2-m^2}
+    \textcolor{red} {-i \Sigma(\slashed{q})}=-i \int \frac{d^3 p}{(2\pi)^3}\gamma^\mu \frac{2\pi}{k} \epsilon_{\mu \nu \alpha} \frac{p^\alpha}{p^2}\gamma^\nu \frac{(\slashed{p}+\slashed{q})+m}{(p+q)^2-m^2}\ .
 \end{equation}
 
 The \textbf{numerator} can be written as:
 \begin{align*}
     -i\frac{2\pi}{k} \gamma^\mu \gamma^\nu \epsilon_{\mu \nu \alpha}p^\alpha (\slashed{p}+\slashed{q}+m)&=-i \frac{2\pi}{k}(g^{\mu \nu}-i\epsilon^{\mu \nu \rho}\gamma_\rho)\epsilon_{\mu \nu \alpha}p^\alpha(\slashed{p}+\slashed{q}+m) 
     \\ &= \frac{-2\pi}{k}(2\delta^\rho_\alpha) \gamma_\rho p^\alpha (\slashed{p}+\slashed{q}+m) =\frac{-4\pi}{k}\slashed{p}(\slashed{p}+\slashed{q}+m)
-    \\ &=-\frac{4\pi}{k}(p^2 \mathbf{1} + \slashed{p}(\slashed{q}+m))
+    \\ &=-\frac{4\pi}{k}(p^2 \mathbf{1} + \slashed{p}(\slashed{q}+m))\ .
 \end{align*}
 
 Which gives:
 \begin{align*}
    \textcolor{red} {-i \Sigma(\slashed{q})} &=\frac{-4\pi}{k} \int \frac{d^3}{(2\pi)^3} \frac{p^2 + \slashed{p}(\slashed{q}+m)}{p^2[(p+q)^2-m^2]}
-    \\ &= -\frac{4 \pi}{k}\left[ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \gamma_\mu \left( \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} \right) (\slashed{q}+m)  \right]
+    \\ &= -\frac{4 \pi}{k}\left[ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \gamma_\mu \left( \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} \right) (\slashed{q}+m)  \right]\ .
 \end{align*}
 
-Focusing on the ingral between partenthesis:
-in order the preserve the Lorentz structure, and since the only external momentum is $q$, it must be:
+Focusing on the integral between partenthesis:
+in order the preserve the Lorentz structure, and since the only external momentum is $q$, it must be
 \begin{align*}
-    \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} = A(q^2)\cdot q^\mu 
+    \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} = A(q^2)\cdot q^\mu \ ,
     \\
-    A(q^2)= \frac{1}{q^2}\int \frac{d^3p}{(2\pi)^3} \frac{p\cdot q}{p^2 [(p+q)^2 - m^2]}
+    A(q^2)= \frac{1}{q^2}\int \frac{d^3p}{(2\pi)^3} \frac{p\cdot q}{p^2 [(p+q)^2 - m^2]}\ .
 \end{align*}
-Substituting $p\cdot q = \frac{1}{2}[(p+q)^2-m^2 - p^2 - q^2 + m^2]$
+Substituting $p\cdot q = \frac{1}{2}[(p+q)^2-m^2 - p^2 - q^2 + m^2]$:
 \begin{align*}
-    A(q^2) = \frac{1}{2 q^2} \int \frac{d^3}{(2\pi)^3} \left[ \frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]
+    A(q^2) = \frac{1}{2 q^2} \int \frac{d^3}{(2\pi)^3} \left[ \frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]\ .
 \end{align*}
 
 Placing it inside the total integral: 
 \begin{align*}
-    \textcolor{red} {-i \Sigma(\slashed{q})}=-\frac{4\pi}{k}\Biggl\{ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \frac{\slashed{q}(\slashed{q}+m)}{2q^2}\int \frac{d^3}{(2\pi)^3} \left[\frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]  \Bigr\}
+    \textcolor{red} {-i \Sigma(\slashed{q})}=-\frac{4\pi}{k}\Biggl\{ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \frac{\slashed{q}(\slashed{q}+m)}{2q^2}\int \frac{d^3}{(2\pi)^3} \left[\frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]  \Bigr\}\ .
 \end{align*}
 
-Now, usingin dim-reg and recalling:
+Now, usingin dim-reg and recalling
 $$
 \int \frac{d^d k}{(2\pi)^d} \frac{1}{(k^2 + \Delta)^n}
 = \frac{1}{(4\pi)^{d/2}} \frac{\Gamma(n - d/2)}{\Gamma(n)}
-\left( \frac{1}{\Delta} \right)^{n - d/2}
+\left( \frac{1}{\Delta} \right)^{n - d/2}\ ,
 $$
 \\
-We can evaluate the different integrals inside $\Sigma(q)$. ($WR:$ wick rotation, $DR:$ dim-reg)
+we can evaluate the different integrals inside $\Sigma(q)$. ($WR:$ wick rotation, $DR:$ dim-reg)
 \begin{align*}
-    \int \frac{d^3 p}{(2\pi)^3} \frac{1}{(p+q)^2 - m^2}&\ 
+   a.\  \int \frac{d^3 p}{(2\pi)^3} \frac{1}{(p+q)^2 - m^2}&\ 
 = \int \frac{d^3 l}{(2\pi)^3} \frac{1}{l^2 - m^2} \stackrel{WR}{=} -i \int \frac{d^3 l}{(2\pi)^3} \frac{1}{l^2 + m^2} 
 \\ &\stackrel{DR}{=}\frac{-i}{8\pi^{3/2}} (-2\sqrt{\pi}) \cdot m = i\frac{m}{4 \pi}
 \end{align*}
 \begin{align*}
-    \int \frac{d^3 p}{(2 \pi)^3} \frac{1}{p^2} \stackrel{DR}{=} 0 
+    b.\ \int \frac{d^3 p}{(2 \pi)^3} \frac{1}{p^2} \stackrel{DR}{=} 0 
 \end{align*}
 \begin{align*}
-    \int \frac{d^3 p}{(2\pi)^3} \frac{1}{p^2 [(p+q)^2-m^2]}&\ =\int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3}\frac{1}{[k^2-\Delta]^2} \stackrel{WR}{=} i \int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3} \frac{1}{[k^2 + \Delta]^2}
+    c.\ \int \frac{d^3 p}{(2\pi)^3} \frac{1}{p^2 [(p+q)^2-m^2]}&\ =\int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3}\frac{1}{[k^2-\Delta]^2} \stackrel{WR}{=} i \int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3} \frac{1}{[k^2 + \Delta]^2}
     \\ &\stackrel{DR}{=}i\frac{\sqrt{\pi}}{8 \pi \sqrt{\pi}}\int_0^1 dx \frac{1}{(q^2 x(x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}
 \end{align*}
-Where $l=p+q;\ \ k=p+xq; \ \ \Delta=q^2 x(x-1)+xm^2$
+Where $l=p+q;\ \ k=p+xq; \ \ \Delta=q^2 x(x-1)+xm^2$.
 \\
-\textbf{Note:} in the first integral I subsituted $d=3$ directly, whereas in the last one $d=3-2\varepsilon$. The reason is to be found in the counter-term calculation at the next page.
+\textbf{Note:} in the first integral I subsituted $d=3$ directly, whereas in the last one $d=3-2\varepsilon$. The reason is to be found in the counter-term calculation at the end of the page.
 
 This results in: 
 \begin{align*}
-    \textcolor{red} {-i \Sigma(\slashed{q})}= -\frac{4 \pi}{k}\Biggl\{ i\frac{m}{4\pi} + \frac{1}{2} \left(\mathbf{1}+\frac{\slashed{q}m}{q^2}\right) \left[ -i\frac{m}{4 \pi} + \frac{i}{8 \pi} (m^2 - q^2)\int_0^1 dx \frac{1}{(q^2 x(x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}  \right] \Biggr\}
+    \textcolor{red} {-i \Sigma(\slashed{q})}= -\frac{4 \pi}{k}\Biggl\{ i\frac{m}{4\pi} + \frac{1}{2} \left(\mathbf{1}+\frac{\slashed{q}m}{q^2}\right) \left[ -i\frac{m}{4 \pi} + \frac{i}{8 \pi} (m^2 - q^2)\int_0^1 dx \frac{1}{(q^2 x(x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}  \right] \Biggr\}\ .
 \end{align*}
 
 
-In the ON-SHELL scheme:
+Finally, \textbf{the counter-terms}calculation in the ON-SHELL scheme:
 \begin{align*}
-    \delta Z_m \cdot m = \Sigma(\slashed{p}=m) = 0
+    \delta Z_m \cdot m = \Sigma(\slashed{p}=m) = 0\ ,
 \end{align*}
 \begin{align*}
     \delta Z_\psi &= \frac{d}{d \slashed{q}}\Sigma(\slashed{q})|_{\slashed{q}=m} =...=\frac{4 \pi}{k}\Biggl\{ \frac{1}{8\pi}\frac{m^2}{q^2} + \frac{d}{d\slashed{q}}\left[ \frac{1}{8 \pi} (m^2-q^2) \int_0^1 dx \frac{1}{(q^2 x (x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}  \right]  \Biggr\}\Bigg| _{\slashed{q}=m}
-    \\ &=\frac{1}{2k} -\frac{1}{k} \int_0^1 dx\  \frac{1}{x^{1+2\varepsilon}}=\frac{1}{2k}\left(1+\frac{1}{\varepsilon}\right)
+    \\ &=\frac{1}{2k} -\frac{1}{k} \int_0^1 dx\  \frac{1}{x^{1+2\varepsilon}}=\frac{1}{2k}\left(1+\frac{1}{\varepsilon}\right)\ .
 \end{align*}
 
 
