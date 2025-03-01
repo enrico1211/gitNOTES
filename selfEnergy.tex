@@ -1,0 +1,250 @@
+\documentclass[a4paper,11pt,DIV=12]{scrartcl}
+\pdfoutput=1
+\usepackage[dvipsnames,x11names]{xcolor}
+\usepackage[ttscale=0.9]{libertine}
+\usepackage{mathrsfs}
+\usepackage[intlimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.0}
+\usepackage{contour}
+%\usepackage{feynmp-auto} %feynman diagram
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,shadows.blur,decorations.pathreplacing}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage[titletoc,title]{appendix}
+\usepackage[affil-it]{authblk}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{graphicx}
+\usepackage[normalem]{ulem}
+\usepackage{layouts}
+\usepackage{bm}
+\usepackage[protrusion=true,expansion,kerning=true,tracking=true,final]{microtype}
+\usepackage[%backref,
+	        colorlinks=true,
+	        linkcolor=hblue,
+	        citecolor=hgreen,
+	        filecolor=hblue,
+	        urlcolor=hred
+	        ]{hyperref}
+\definecolor{hgreen}{rgb}{0,.3,0}
+\definecolor{hred}{rgb}{.3,0,0}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{hblue}{rgb}{0,0,.3}
+\definecolor{LightGray}{gray}{0.95}
+\definecolor{gray}{gray}{0.6}
+
+\newlength{\bibitemsep}\setlength{\bibitemsep}{.035\baselineskip plus .05\baselineskip minus .05\baselineskip}
+\newlength{\bibparskip}\setlength{\bibparskip}{0pt}
+\let\oldthebibliography\thebibliography
+\renewcommand\thebibliography[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\parskip}{\bibitemsep}%
+  \setlength{\itemsep}{\bibparskip}%
+}
+\usepackage[T1,LY1]{fontenc}
+
+\makeatletter
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+
+\allowdisplaybreaks
+\setcapindent{1em}
+
+\setkomafont{captionlabel}{\bfseries}
+\setkomafont{caption}{\itshape}
+\setkomafont{titlehead}{\normalsize\sffamily}
+\addtokomafont{title}{\boldmath}
+\addtokomafont{section}{\boldmath}
+
+\KOMAoptions{headinclude=false,
+             footinclude=false,
+             twoside=false,
+             parskip=true,
+             draft=false,
+%             overfullrule=false,
+             abstract=true,
+             numbers=noenddot,
+             DIV=12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Lag}{\mathscr{L}}
+
+\newcommand{\MX}[1]{\textcolor{RoyalBlue3}{\bfseries [MU: #1]}}
+\newcommand{\mx}[1]{\textcolor{RoyalBlue3}{#1}}
+
+\newcommand{\ES}[1]{\textcolor{OrangeRed3}{\bfseries [ES: #1]}}
+\newcommand{\es}[1]{\textcolor{OrangeRed3}{#1}}
+
+\newcommand{\LDP}[1]{\textcolor{SpringGreen4}{\bfseries [LDP: #1]}}
+\newcommand{\ldp}[1]{\textcolor{SpringGreen4}{#1}}
+
+\newcommand{\eds}[1]{\textcolor{Lavender}{#1}}
+\newcommand{\EDS}[1]{\textcolor{Lavender}{{\bfseries [EDS: #1]}}}
+
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\qed}{$\mathrm{QED}_3$}
+\newcommand{\SU}{\mathrm{SU}}
+
+\begin{document}
+
+% TITLE AND AUTHOR
+\title{Notes}
+\author{Enrico}
+\date{\today}  % Automatically updates to today's date
+
+\maketitle
+
+Here follow the calculation for the fermions 1PI at order $O(\frac{1}{k})$
+\begin{equation}
+    -i\Sigma(p)=-i \int \frac{d^3 p}{(2\pi)^3}\gamma^\mu \frac{2\pi}{k} \epsilon_{\mu \nu \alpha} \frac{p^\alpha}{p^2}\gamma^\nu \frac{(\slashed{p}+\slashed{q})+m}{(p+q)^2-m^2}
+\end{equation}
+\subsubsection*{Denominator}
+
+\begin{align*}
+    \frac{1}{p^2}\frac{1}{(p+q)^2-m^2}&= \int dx \frac{1}{[x((p+q)^2-m^2)+(1-x)p^2]^2}=\int_0^1 dx\frac{1}{[l^2-\Delta]^2}\\
+    l = p +x q\ ;\ \ \Delta = q^2 x(x-1)+x m^2
+\end{align*}
+
+\subsubsection*{Numerator}
+\begin{align*}
+    -i\frac{2\pi}{k} \gamma^\mu \gamma^\nu \epsilon_{\mu \nu \alpha}p^\alpha (\slashed{p}+\slashed{q}+m)=-i \frac{2pi}{k}(g^{\mu \nu}-i\epsilon^{\mu \nu \rho}\gamma_\rho)\epsilon_{\mu \nu \alpha}p^\alpha(\slashed{p}+\slashed{q}+m) = \frac{-2\pi}{k}\slashed{p}(\slashed{p}+\slashed{q}+m)
+\end{align*}
+
+\subsubsection*{Together}
+\begin{align*}
+    \frac{-2\pi}{k}\int_0^1 dx \int \frac{d^3p}{(2\pi)^3} \frac{1}{[l^2-\Delta]^2}(\slashed{p}\slashed{p}+\slashed{p}\slashed{q}+\slashed{p}m)
+\end{align*}
+Changing to $l$
+\begin{align*}
+    \slashed{p}(\slashed{p}+\slashed{q}+m) = (\slashed{l}-x\slashed{q})(\slashed{l}-x\slashed{q}+\slashed{q}+m)=l^2 - x\slashed{l}\slashed{q} + \slashed{l}\slashed{q} + \slashed{l}m -x\slashed{q}\slashed{l}-x\slashed{q}\slashed{q} -x \slashed{q}m +x^2q^2
+\end{align*}
+Getting rid of linear contributions in $l$
+\begin{align*}
+    -\frac{2\pi}{k}\int_0^1 dx \int \frac{d^3l}{(2\pi)^3} \frac{l^2}{[l^2-\Delta]^2} - \frac{2\pi}{k}\int_0^1 dx [q^2 x(x-1)-x m \slashed{q}]\int \frac{d^3 l}{(2\pi)^3} \frac{1}{[l^2-\Delta]^2}
+\end{align*}
+Wick rotating:
+\begin{align*}
+    -i\frac{2\pi}{k}\int_0^1 dx \int \frac{d^3l}{(2\pi)^3} \frac{-l^2}{[l^2+\Delta]^2} - i\frac{2\pi}{k}\int_0^1 dx [q^2 x(x-1)-x m \slashed{q}]\int \frac{d^3 l}{(2\pi)^3} \frac{1}{[l^2+\Delta]^2}
+\end{align*}
+\textbf{NOTE: the first integral clearly shows UV divergences:}
+\begin{equation*}
+    \int_a^\Lambda d^3 l \frac{l^2}{[l^2+\delta]^2} \sim^{a\to \infty} \int_a^\Lambda dl \frac{l^4}{l^4}\sim \Lambda
+\end{equation*}
+\textbf{still, dimensional regulation is blind to power-law divergences, it only shows logarithmic ones.}\\
+Let us us dim-reg.\\
+Knowing:
+\begin{align*}
+    \int \frac{d^dl}{(2\pi)^d}\frac{l^2}{[l^2+\Delta]^2}=\frac{d}{2}\frac{\Gamma(1-\frac{d}{2})}{(4\pi)^{d/2}}\frac{1}{\Delta^{1-\frac{d}{2}}}\ \ ;\ \ \int \frac{d^d l}{(2\pi)^3}\frac{1}{[l^2+\Delta]^2}=\frac{\Gamma[2-\frac{d}{2}]}{(4\pi)^{d/2}}\frac{1}{\Delta^{2-\frac{d}{2}}}
+\end{align*}
+No need to set $d=3-\epsilon$, since the $\Gamma$ functions would show no pole for $\epsilon \to 0$.\\
+It gives finally:
+\begin{align*}
+    -i \Sigma(p) = &-i \frac{3}{4k}\int_0^1 dx \sqrt{q^2 x(x-1)+x m^2}\\
+    &-i\frac{1}{4k}(\int_0^1 dx \frac{q^2 x(x-1)}{\sqrt{q^2 x(x-1)+x m^2}} - \int_0^1 dx \frac{x m \slashed{q}}{\sqrt{q^2 x(x-1)+x m^2}})
+\end{align*}
+
+From which:
+\begin{align*}
+    \delta Z_m \cdot m = \Sigma(p=m) = \frac{3}{4k}\int_0^1 dx\ m\cdot x  + \frac{1}{4k}\left[\int_0^1 dx \frac{m^2 x(x-1)}{m x} - \int_0^1 dx \frac{x m^2}{x m}\right]=0
+\end{align*}
+at order $O(\frac{1}{k})$
+
+\newpage
+
+\section{Fermion self energy calculation}
+
+Here follow the calculation for the fermions 1PI at order $O(\frac{1}{k})$
+\begin{equation}
+    \textcolor{red} {-i \Sigma(\slashed{q})}=-i \int \frac{d^3 p}{(2\pi)^3}\gamma^\mu \frac{2\pi}{k} \epsilon_{\mu \nu \alpha} \frac{p^\alpha}{p^2}\gamma^\nu \frac{(\slashed{p}+\slashed{q})+m}{(p+q)^2-m^2}
+\end{equation}
+
+The \textbf{numerator} can be written as:
+\begin{align*}
+    -i\frac{2\pi}{k} \gamma^\mu \gamma^\nu \epsilon_{\mu \nu \alpha}p^\alpha (\slashed{p}+\slashed{q}+m)&=-i \frac{2\pi}{k}(g^{\mu \nu}-i\epsilon^{\mu \nu \rho}\gamma_\rho)\epsilon_{\mu \nu \alpha}p^\alpha(\slashed{p}+\slashed{q}+m) 
+    \\ &= \frac{-2\pi}{k}(2\delta^\rho_\alpha) \gamma_\rho p^\alpha (\slashed{p}+\slashed{q}+m) =\frac{-4\pi}{k}\slashed{p}(\slashed{p}+\slashed{q}+m)
+    \\ &=-\frac{4\pi}{k}(p^2 \mathbf{1} + \slashed{p}(\slashed{q}+m))
+\end{align*}
+
+Which gives:
+\begin{align*}
+   \textcolor{red} {-i \Sigma(\slashed{q})} &=\frac{-4\pi}{k} \int \frac{d^3}{(2\pi)^3} \frac{p^2 + \slashed{p}(\slashed{q}+m)}{p^2[(p+q)^2-m^2]}
+    \\ &= -\frac{4 \pi}{k}\left[ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \gamma_\mu \left( \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} \right) (\slashed{q}+m)  \right]
+\end{align*}
+
+Focusing on the ingral between partenthesis:
+in order the preserve the Lorentz structure, and since the only external momentum is $q$, it must be:
+\begin{align*}
+    \textcolor{blue}{\int \frac{d^3p}{(2\pi)^3} \frac{p^\mu}{p^2 [(p+q)^2 - m^2]}} = A(q^2)\cdot q^\mu 
+    \\
+    A(q^2)= \frac{1}{q^2}\int \frac{d^3p}{(2\pi)^3} \frac{p\cdot q}{p^2 [(p+q)^2 - m^2]}
+\end{align*}
+Substituting $p\cdot q = \frac{1}{2}[(p+q)^2-m^2 - p^2 - q^2 + m^2]$
+\begin{align*}
+    A(q^2) = \frac{1}{2 q^2} \int \frac{d^3}{(2\pi)^3} \left[ \frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]
+\end{align*}
+
+Placing it inside the total integral: 
+\begin{align*}
+    \textcolor{red} {-i \Sigma(\slashed{q})}=-\frac{4\pi}{k}\Biggl\{ \int \frac{d^3p}{(2\pi)^3} \frac{\mathbf{1}}{(p+q)^2-m^2} + \frac{\slashed{q}(\slashed{q}+m)}{2q^2}\int \frac{d^3}{(2\pi)^3} \left[\frac{1}{p^2} - \frac{1}{(p+q)^2-m^2} + \frac{m^2 - q^2}{p^2[(p+q)^2 - m^2]} \right]  \Bigr\}
+\end{align*}
+
+Now, usingin dim-reg and recalling:
+$$
+\int \frac{d^d k}{(2\pi)^d} \frac{1}{(k^2 + \Delta)^n}
+= \frac{1}{(4\pi)^{d/2}} \frac{\Gamma(n - d/2)}{\Gamma(n)}
+\left( \frac{1}{\Delta} \right)^{n - d/2}
+$$
+\\
+We can evaluate the different integrals inside $\Sigma(q)$. ($WR:$ wick rotation, $DR:$ dim-reg)
+\begin{align*}
+    \int \frac{d^3 p}{(2\pi)^3} \frac{1}{(p+q)^2 - m^2}&\ 
+= \int \frac{d^3 l}{(2\pi)^3} \frac{1}{l^2 - m^2} \stackrel{WR}{=} -i \int \frac{d^3 l}{(2\pi)^3} \frac{1}{l^2 + m^2} 
+\\ &\stackrel{DR}{=}\frac{-i}{8\pi^{3/2}} (-2\sqrt{\pi}) \cdot m = i\frac{m}{4 \pi}
+\end{align*}
+\begin{align*}
+    \int \frac{d^3 p}{(2 \pi)^3} \frac{1}{p^2} \stackrel{DR}{=} 0 
+\end{align*}
+\begin{align*}
+    \int \frac{d^3 p}{(2\pi)^3} \frac{1}{p^2 [(p+q)^2-m^2]}&\ =\int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3}\frac{1}{[k^2-\Delta]^2} \stackrel{WR}{=} i \int_0^1 dx \int \frac{d^3 k }{(2 \pi)^3} \frac{1}{[k^2 + \Delta]^2}
+    \\ &\stackrel{DR}{=}i\frac{\sqrt{\pi}}{8 \pi \sqrt{\pi}}\int_0^1 dx \frac{1}{(q^2 x(x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}
+\end{align*}
+Where $l=p+q;\ \ k=p+xq; \ \ \Delta=q^2 x(x-1)+xm^2$
+\\
+\textbf{Note:} in the first integral I subsituted $d=3$ directly, whereas in the last one $d=3-2\varepsilon$. The reason is to be found in the counter-term calculation at the next page.
+
+This results in: 
+\begin{align*}
+    \textcolor{red} {-i \Sigma(\slashed{q})}= -\frac{4 \pi}{k}\Biggl\{ i\frac{m}{4\pi} + \frac{1}{2} \left(\mathbf{1}+\frac{\slashed{q}m}{q^2}\right) \left[ -i\frac{m}{4 \pi} + \frac{i}{8 \pi} (m^2 - q^2)\int_0^1 dx \frac{1}{(q^2 x(x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}  \right] \Biggr\}
+\end{align*}
+
+\newpage
+
+\section{Counter-terms}
+In the ON-SHELL scheme:
+\begin{align*}
+    \delta Z_m \cdot m = \Sigma(\slashed{p}=m) = 0
+\end{align*}
+\begin{align*}
+    \delta Z_\psi &= \frac{d}{d \slashed{q}}\Sigma(\slashed{q})|_{\slashed{q}=m} =...=\frac{4 \pi}{k}\Biggl\{ \frac{1}{8\pi}\frac{m^2}{q^2} + \frac{d}{d\slashed{q}}\left[ \frac{1}{8 \pi} (m^2-q^2) \int_0^1 dx \frac{1}{(q^2 x (x-1)+xm^2)^{\frac{1}{2}+\varepsilon}}  \right]  \Biggr\}\Bigg| _{\slashed{q}=m}
+    \\ &=\frac{1}{2k} -\frac{1}{k} \int_0^1 dx\  \frac{1}{x^{1+2\varepsilon}}=\frac{1}{2k}\left(1+\frac{1}{\varepsilon}\right)
+\end{align*}
+
+
+% \newpage
+% \addcontentsline{toc}{section}{References}
+% \bibliographystyle{JHEP}
+% \bibliography{references}
+
+\end{document}
